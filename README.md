@@ -50,12 +50,13 @@ Follow these steps to set up the project on your local machine:
    ```bash
    npm start
 
-usage
+##usage
 Once the application is running, open your web browser and navigate to http://localhost:5000 to access the PetShop system.
 
 Default Login Credentials:
 
 Email: vietvp213@gmail.com
 Password: 123123
-Contact
+
+##Contact
 If you have any questions, suggestions, or feedback, please contact me at vietvp213@.com.
