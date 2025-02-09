@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+    <title>product</title>
+</head>
+
+<body>
+  <main class="product-detail container my-5">
+    <% if (product) { %>
+      <div class="product-detail-wrapper">
+        <div class="product-detail-image">
+          <img src="<%= product.imageUrl %>" alt="<%= product.name %>">
+        </div>
+        <div class="product-detail-info">
+          <h1><%= product.name %></h1>
+          <p class="product-description"><%= product.description %></p>
+          <p class="product-price"><strong>Giá: </strong><%= product.price %> VND</p>
+
+          <form action="/user/cart/add" method="post" class="product-form">
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <label for="quantity">Số lượng:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+            <% if (user) { %>
+              <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+            <% } else { %>
+              <a href="/auth/login" class="btn btn-primary">Thêm vào giỏ hàng</a>
+            <% } %>
+        </div>
+      </div>
+    <% } %>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

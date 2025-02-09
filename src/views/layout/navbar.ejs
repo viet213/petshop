@@ -1,0 +1,12 @@
+ 
+  <div class="container">
+    <div class="flexbox-header">
+        <ul class="cate-item">
+          <a href="/" aria-label="Shop thú cưng" title="Shop thú cưng">Trang chủ </a>
+          <% categories.forEach(category => { %>
+            <li><a href="/products/category/<%= category._id %>"><%= category.name %></a></li>
+          <% }) %>
+        </ul>
+    </div>
+  </div>
+  

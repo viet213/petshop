@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+    <%- include('../layout/header') %>
+    <%- include('../layout/navbar') %>
+</head>
+<script src="/js/main.js"></script> 
+<body>
+    <h1 class="order-confirmation__title">Xác nhận đặt hàng</h1>
+
+    <form action="/user/order/cart/confirm" method="POST" class="order-confirmation__form">
+        <div class="order-confirmation__checkbox">
+            <input type="checkbox" id="useProfileInfo" onchange="fillProfileInfo(this)" class="order-confirmation__checkbox-input">
+            <label for="useProfileInfo" class="order-confirmation__checkbox-label">Sử dụng thông tin từ hồ sơ</label>
+        </div>
+
+        <div class="order-confirmation__field">
+            <label for="shippingAddress" class="order-confirmation__label">Địa chỉ giao hàng</label>
+            <input type="text" id="shippingAddress" name="shippingAddress" value="<%= user.address %>" required class="order-confirmation__input">
+        </div>
+
+        <div class="order-confirmation__field">
+            <label for="phoneNumber" class="order-confirmation__label">Số điện thoại</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" value="<%= user.phone %>" required class="order-confirmation__input" oninput="validatePhoneNumber(this)">
+        </div>
+
+        <div class="order-confirmation__field">
+            <label for="recipientName" class="order-confirmation__label">Tên người nhận</label>
+            <input type="text" id="recipientName" name="recipientName" value="<%= user.name %>" required class="order-confirmation__input">
+        </div>
+
+        <div class="order-confirmation__field">
+            <label for="paymentMethod" class="order-confirmation__label">Hình thức thanh toán</label>
+            <select name="paymentMethod" required class="order-confirmation__select">
+                <option value="COD" selected>Thanh toán khi nhận hàng (COD)</option>
+                <!-- <option value="Online">Thanh toán trực tuyến</option> -->
+            </select>
+        </div>
+
+        <div class="order-confirmation__cart-details">
+            <h2 class="order-confirmation__cart-title">Chi tiết giỏ hàng</h2>
+            <ul id="cartItems" class="order-confirmation__cart-items">
+                <% cart.items.forEach((item, index) => { %>
+                    <li class="order-confirmation__cart-item">
+                        <%= item.product.name %> - Số lượng: <%= item.quantity %>
+                        <input type="hidden" name="cartItems[<%= index %>][quantity]" value="<%= item.quantity %>">
+                        <input type="hidden" name="cartItems[<%= index %>][product]" value="<%= item.product._id %>">
+                    </li>
+                <% }) %>
+            </ul>
+            <p class="order-confirmation__total-price"><strong>Tổng tiền: </strong> <span id="totalPrice"><%= cart.items.reduce((total, item) => total + item.quantity * item.product.price, 0).toLocaleString() %> VND</span></p>
+        </div>
+
+        <button type="submit" class="order-confirmation__submit-button">Xác nhận đặt hàng</button>
+    </form>
+    
+    <script>
+        // Truyền thông tin từ EJS vào các biến JavaScript
+        const user = {
+            address: "<%= user.address || '' %>",
+            phone: "<%= user.phone || '' %>",
+            name: "<%= user.name || '' %>"
+        };
+    </script>
+    <!-- Thêm Bootstrap JS và jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script> <!-- Liên kết file main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

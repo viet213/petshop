@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/updatestyle.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+</head>
+
+<body>
+  <main class="category-management-container my-5">
+    <h2 class="category-management-title text-center">Quản lý Danh mục</h2>
+
+    <!-- Tìm kiếm danh mục -->
+    <div class="search-category mb-4">
+      <form action="/admin/categories" method="get" class="input-group">
+        <input type="text" class="form-control search-input" placeholder="Tìm kiếm danh mục" name="search" value="<%= searchQuery %>">
+        <button class="btn btn-outline-secondary search-button" type="submit">Tìm kiếm</button>
+      </form>
+    </div>
+
+    <!-- Bảng danh sách danh mục -->
+    <table class="category-table table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Tên danh mục</th>
+          <th>Mô tả</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% categories.forEach(function(category, index) { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= category.name %></td>
+            <td><%= category.description %></td>
+            <td class="action-buttons">
+              <!-- Form xóa -->
+              <form action="/admin/categories/delete/<%= category._id %>" method="post" class="delete-form d-inline" onsubmit="return confirm('nếu bạn xóa danh mục này thì các sản phẩm trong danh mục sẽ bị xóa! Bạn có muốn tiếp tục?');">
+                <button class="btn btn-danger btn-sm delete-button">Xóa</button>
+              </form>
+              <!-- Liên kết sửa -->
+              <a href="/admin/categories/update/<%= category._id %>" class="btn btn-info btn-sm edit-button">Sửa</a>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <!-- Nút thêm danh mục -->
+    <div class="add-category-button text-center mt-4">
+      <a href="/admin/categories/add" class="btn btn-success">Thêm Danh mục mới</a>
+    </div>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

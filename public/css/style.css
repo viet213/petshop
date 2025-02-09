@@ -1,0 +1,1950 @@
+/* style.css */
+
+/* General Reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, img, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+    background-color: #f8f9fa; /* Light grey background */
+    border-bottom: 1px solid #ddd; /* Subtle border */
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Search Bar */
+.search-bar {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.search-bar form {
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+/* User Options */
+.user-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-options a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #007bff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.user-options a:hover {
+    background-color: #f1f1f1;
+}
+
+.logout {
+    color: #dc3545; /* Red for logout */
+}
+
+.logout:hover {
+    background-color: #f8d7da;
+}
+
+/* Cart Icon */
+.cart-icon {
+    position: relative;
+}
+
+.cart-icon img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.cart-icon .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 50%;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item-image img {
+    max-width: 8040px;
+    max-height: 80px;
+    object-fit: cover;
+}
+
+.cart-item-details h3 {
+    margin: 0;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.update-form,
+.remove-form {
+    margin: 5px 0;
+}
+
+.remove-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.order-summary {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.order-summary h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.order-summary p {
+    margin: 5px 0;
+}
+
+.order-items {
+    margin-top: 10px;
+}
+
+.order-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item p {
+    margin: 5px 0;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-info {
+    text-align: center;
+}
+
+.product-name {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #00aaff;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.view-detail,
+.add-to-cart {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-detail {
+    background-color: #007bff;
+}
+
+.view-detail:hover {
+    background-color: #0056b3;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+}
+
+.add-to-cart:hover {
+    background-color: #1e7e34;
+}
+
+.out-of-stock {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Loại bỏ dấu chấm trước các mục */
+}
+
+/* Container chính */
+.container {
+    max-width: 1200px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+    padding: 0 15px; /* Khoảng cách bên trái và bên phải */
+
+    min-height: 50px;
+}
+
+/* Flexbox cho tiêu đề và danh mục */
+.flexbox-header {
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: flex-start; /* Căn đều khoảng cách giữa các phần tử */
+}
+/* Danh sách mục */
+.cate-item {
+    display: flex; /* Sử dụng flexbox cho danh sách mục */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Liên kết trong danh sách */
+.cate-item li {
+    margin-right: 15px; /* Khoảng cách giữa các mục */
+}
+
+.cate-item a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #333; /* Màu chữ */
+    font-weight: bold; /* Chữ đậm */
+    font-size: 18px; /* Tăng kích thước chữ */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng hover cho liên kết */
+.cate-item a:hover {
+    background-color: #e0e0e0; /* Màu nền khi hover */
+    border-radius: 5px; /* Bo góc */
+}
+/* public/css/style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.body-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Banner Section */
+.banner {
+    background-color: #4CAF50;
+    color: white;
+    padding: 50px 0;
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.banner .btn-primary {
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.featured-products h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.featured-products .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.featured-products .card img {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.featured-products .card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.featured-products .card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.featured-products .card-text {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.featured-products .btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: #f1f1f1;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta .btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.cta .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.auth-section {
+    padding: 50px 0;
+}
+
+.auth-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 15px;
+}
+
+.auth-form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.auth-form .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.auth-form .form-control:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.auth-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background-color: #45a049;
+}
+
+.auth-form .alert {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+}
+
+.auth-form p {
+    text-align: center;
+}
+
+.auth-form a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Products Page Header */
+.products-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.products-header h1 {
+    font-size: 36px;
+    color: #007bff;
+}
+
+.search-result {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0.5fr));
+    gap: 5%;
+    padding-bottom: 5%; 
+
+}
+    
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px; 
+    margin: 0px ;
+
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;  
+    border-radius: 8px 8px 0 0;
+}
+
+.product-title a {
+    color: #00ff26;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px 0;
+    display: block;
+}
+
+.product-title a:hover {
+    text-decoration: underline;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* No Products Message */
+.no-products {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin: 50px 0;
+}
+/* Product Detail Page */
+.product-detail {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20%;
+    align-items: flex-start;
+}
+.product-detail-image{
+    width: 500px;
+    height: 750px;  
+    
+}
+.product-detail-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.product-detail-info {
+    flex: 1;
+    padding-top: 50px;
+    max-width: 500px;
+}
+
+.product-detail-info h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #007bff;
+}
+
+.product-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.products-page {
+    padding-bottom: 250px; /* Thêm khoảng cách dưới phần sản phẩm */
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-form {
+    margin-bottom: 15px;
+}
+
+.product-form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+
+.login-notice {
+    font-size: 18px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* Banner Section */
+.banner {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.banner .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    max-width: 200px;
+}
+
+/* Featured Products Section */
+.featured-products .product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.featured-products .product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.featured-products .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.cta .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.cta .btn-success {
+    background-color: #28a745;
+}
+
+.cta .btn-secondary {
+    background-color: #6c757d;
+}
+
+/* General Styles */
+.container {
+    max-width: 1200px;
+
+}
+
+h2.text-center {
+    margin-bottom: 20px;
+}
+
+/* User Style */
+
+/* Cart */
+
+/* Kiểu cho tiêu đề giỏ hàng */
+.shopping-cart__title {
+    text-align: center; /* Căn giữa văn bản */
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho giỏ hàng */
+.shopping-cart {
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    align-items: center; /* Căn phải cho các phần tử */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    border: 1px solid #ddd; /* Đường viền cho giỏ hàng */
+    padding: 20px; /* Padding cho giỏ hàng */
+    border-radius: 8px; /* Bo góc cho viền */
+    background-color: #f9f9f9; /* Màu nền cho giỏ hàng */
+}
+
+.shopping-cart__table {
+    width: 80%; /* Giảm chiều rộng bảng xuống 80% */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    margin-left: auto; /* Căn giữa bảng */
+    margin-right: auto; /* Căn giữa bảng */
+}
+
+.shopping-cart__header {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề */
+    text-align: center; /* Căn trái văn bản */
+    padding: 10px; /* Padding cho tiêu đề */
+    border-bottom: 2px solid #ddd; /* Đường viền dưới */
+}
+
+.shopping-cart__item {
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cho mỗi hàng */
+}
+
+.shopping-cart__product-name,
+.shopping-cart__quantity,
+.shopping-cart__price,
+.shopping-cart__total,
+.shopping-cart__action {
+    padding: 10px; /* Padding cho các ô */
+    text-align: center; /* Căn giữa nội dung trong các ô */
+}
+
+.shopping-cart__price,
+.shopping-cart__total {
+    text-align: right; /* Căn phải cho giá và tổng tiền */
+}
+
+.shopping-cart__update-button,
+.shopping-cart__remove-button,
+.shopping-cart__order-button {
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    padding: 8px 12px; /* Padding cho nút */
+    text-align: center; /* Căn giữa văn bản trong nút */
+    text-decoration: none; /* Không có gạch chân */
+    display: inline-block; /* Hiển thị như một khối nội tuyến */
+    margin: 4px 2px; /* Khoảng cách giữa các nút */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    border-radius: 4px; /* Bo góc */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.shopping-cart__update-button:hover,
+.shopping-cart__remove-button:hover,
+.shopping-cart__order-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+.shopping-cart__total {
+    font-weight: bold; /* Đậm chữ */
+    font-size: 1.2em; /* Kích thước chữ */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    text-align: center; /* Căn giữa văn bản */
+}
+
+.shopping-cart__order-form {
+    display: flex; /* Sử dụng Flexbox */
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử */
+    margin-top: 10px; /* Khoảng cách giữa tổng cộng và nút */
+}
+
+/* Oderdetail style */
+
+/* Kiểu cho tiêu đề */
+.order-details__title {
+    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho bảng chi tiết đơn hàng */
+.order-details__table {
+    width: 80%; /* Giảm chiều rộng bảng xuống 80% */
+    max-width: 600px; /* Đặt chiều rộng tối đa cho bảng */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+    margin: 0 auto; /* Căn giữa bảng */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+.order-details__header {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+    text-align: center; /* Căn trái văn bản */
+    padding: 10px; /* Padding cho tiêu đề */
+}
+
+.order-details__row {
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cho mỗi hàng */
+}
+
+.order-details__product-name,
+.order-details__quantity,
+.order-details__price {
+    padding: 10px; /* Padding cho các ô */
+    text-align: center; /* Căn giữa nội dung trong các ô */
+}
+
+/* Kiểu cho phần tóm tắt đơn hàng */
+.order-details__summary {
+    margin-top: 20px; /* Khoảng cách phía trên */
+    padding: 10px; /* Padding cho phần tóm tắt */
+    border: 1px solid #ddd; /* Đường viền cho phần tóm tắt */
+    border-radius: 8px; /* Bo góc cho viền */
+    background-color: #f9f9f9; /* Màu nền cho phần tóm tắt */
+    margin-left: 200px; /* Dịch sang phải 200px */
+    margin-right: 200px;/* Dịch sang trái 200px */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+.order-details__total,
+.order-details__shipping-address,
+.order-details__recipient-name,
+.order-details__phone-number,
+.order-details__status {
+    margin: 10px 0; /* Khoảng cách giữa các phần tử */
+    text-align: left; /* Căn phải cho các thông tin */
+}
+
+/* Kiểu cho nút hủy đơn hàng */
+.order-details__cancel-form {
+    text-align: center; /* Căn giữa form */
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+.order-details__cancel-button {
+    background-color: #f44336; /* Màu nền đỏ */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    padding: 10px 20px; /* padding cho nút */
+    text-align: center; /* Căn giữa văn bản trong nút */
+    text-decoration: none; /* Không có gạch chân */
+    display: inline-block; /* Hiển thị như một khối nội tuyến */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    border-radius: 4px; /* Bo góc */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+.order-details__cancel-button:hover {
+    background-color: #d32f2f; /* Màu nền khi hover */
+}
+
+/* Kiểu cho liên kết trở về */
+.order-details__back-link {
+    text-align: center; /* Căn giữa liên kết */
+    margin-top: 20px; /* Khoảng cách phía trên */
+}
+
+.order-details__back-link a {
+    color: #2196F3; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không có gạch chân */
+}
+
+.order-details__back-link a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+.order-details__back-button {
+    background-color: #2196F3; /* Màu nền cho nút */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    padding: 10px 20px; /* Padding cho nút */
+    text-align: center; /* Căn giữa văn bản trong nút */
+    text-decoration: none; /* Không có gạch chân */
+    display: inline-block; /* Hiển thị như một khối nội tuyến */
+    cursor: pointer; /* Con trỏ khi di chuột */
+    border-radius: 4px; /* Bo góc */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+    margin-bottom: 20px; /* Khoảng cách phía trên nút */
+}
+
+.order-details__back-button:hover {
+    background-color: #1976D2; /* Màu nền khi hover */
+}
+
+/* Oder style */
+
+/* Kiểu cho tiêu đề danh sách đơn hàng */
+.order-list__title {
+    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho bảng danh sách đơn hàng */
+.order-list__table {
+    width: 80%; /* Chiếm 80% chiều rộng */
+    max-width: 800px; /* Chiều rộng tối đa */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+    margin: 0 auto; /* Căn giữa bảng */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    border: 4px solid #333; /* Đường viền bao quanh bảng với màu đậm hơn */
+    border-radius: 8px; /* Bo góc cho bảng */
+    overflow: hidden; /* Đảm bảo bo góc hoạt động */
+}
+
+.order-list__header {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+    text-align: center; /* Căn giữa văn bản */
+    padding: 10px; /* Padding cho tiêu đề */
+}
+
+.order-list__row {
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cho mỗi hàng */
+}
+
+.order-list__date,
+.order-list__total-price,
+.order-list__status,
+.order-list__details {
+    padding: 10px; /* Padding cho các ô */
+    text-align: left; /* Căn giữa nội dung trong các ô */
+}
+
+/* Kiểu cho liên kết xem chi tiết */
+.order-list__details-link {
+    color: #2196F3; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Không có gạch chân */
+}
+
+.order-list__details-link:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Kiểu cho thông báo không có đơn hàng */
+.order-list__no-orders {
+    text-align: center; /* Căn giữa thông báo */
+    font-size: 1.2em; /* Kích thước chữ */
+    color: #888; /* Màu chữ nhạt */
+}
+
+/* Placeorder Style */
+
+/* Kiểu cho tiêu đề xác nhận đặt hàng */
+.order-confirmation__title {
+    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho form xác nhận đặt hàng */
+.order-confirmation__form {
+    width: 80%; /* Chiếm 80% chiều rộng */
+    max-width: 600px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa form */
+    padding: 20px; /* Padding cho form */
+    border: 2px solid #333; /* Đường viền cho form */
+    border-radius: 8px; /* Bo góc cho form */
+    background-color: #f9f9f9; /* Màu nền cho form */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho các trường nhập liệu */
+.order-confirmation__field 
+.order-confirmation__field {
+    margin-bottom: 20px; /* Khoảng cách giữa các trường */
+    margin-top: 20px; /* Khoảng cách giữa các trường */
+}
+
+.order-confirmation__label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 10px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+.order-confirmation__input,
+.order-confirmation__select {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho các trường nhập liệu */
+    border: 1px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 4px; /* Bo góc cho các trường */
+    margin-bottom: 10px; /* Khoảng cách giữa các trường */
+}
+
+/* Kiểu cho checkbox */
+.order-confirmation__checkbox {
+    margin-bottom: 20px; /* Khoảng cách dưới checkbox */
+}
+
+/* Kiểu cho tiêu đề giỏ hàng */
+.order-confirmation__cart-title {
+    margin-top: 20px; /* Khoảng cách trên tiêu đề giỏ hàng */
+    font-size: 1.5em; /* Kích thước chữ cho tiêu đề giỏ hàng */
+}
+
+/* Kiểu cho danh sách giỏ hàng */
+.order-confirmation__cart-items {
+    list-style-type: none; /* Không có dấu đầu dòng */
+    padding: 0; /* Xóa padding */
+}
+
+.order-confirmation__cart-item {
+    padding: 10px; /* Padding cho từng mục giỏ hàng */
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cho từng mục */
+}
+
+.order-confirmation__total-price {
+    font-weight: bold; /* Chữ đậm cho tổng tiền */
+    margin-top: 10px; /* Khoảng cách trên tổng tiền */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho nút xác nhận đặt hàng */
+.order-confirmation__submit-button {
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+}
+
+.order-confirmation__submit-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+/* Profile Style */
+
+/* Kiểu cho tiêu đề thông tin cá nhân */
+.profile-info__title {
+    text-align: center; /* Căn giữa tiêu đề */
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho form thông tin cá nhân */
+.profile-info__form {
+    width: 80%; /* Chiếm 80% chiều rộng */
+    max-width: 600px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa form */
+    padding: 20px; /* Padding cho form */
+    border: 2px solid #333; /* Đường viền cho form */
+    border-radius: 8px; /* Bo góc cho form */
+    background-color: #f9f9f9; /* Màu nền cho form */
+    margin-bottom: 40px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho các trường nhập liệu */
+.profile-info__field {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+}
+
+.profile-info__label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+.profile-info__input {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho các trường nhập liệu */
+    border: 1px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 4px; /* Bo góc cho các trường */
+}
+
+/* Kiểu cho nút cập nhật thông tin */
+.profile-info__submit-button {
+    background-color: #4CAF50; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+}
+
+.profile-info__submit-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+/* Kiểu cho tiêu đề đổi mật khẩu */
+.profile-info__password-title {
+    margin-top: 30px; /* Khoảng cách trên tiêu đề đổi mật khẩu */
+    margin-bottom: 20px;/* Khoảng cách dưới tiêu đề đổi mật khẩu */
+    font-size: 1.5em; /* Kích thước chữ cho tiêu đề đổi mật khẩu */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Admin Style */
+
+/* Add Category Style */
+/* Kiểu cho container của form thêm danh mục */
+.category-add__container {
+    max-width: 600px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+    padding: 20px; /* Padding cho container */
+    border: 2px solid #333; /* Đường viền cho container */
+    border-radius: 8px; /* Bo góc cho container */
+    background-color: #f9f9f9; /* Màu nền cho container */
+    margin-bottom: 30px; /* Khoảng cách dưới container */
+}
+
+/* Kiểu cho tiêu đề */
+.category-add__title {
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho các trường nhập liệu */
+.category-add__field {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+}
+
+.category-add__label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+.category-add__input,
+.category-add__textarea {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho các trường nhập liệu */
+    border: 2px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 4px; /* Bo góc cho các trường */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+/* Thay đổi màu viền khi focus */
+.category-add__input:focus,
+.category-add__textarea:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+    outline: none; /* Bỏ outline mặc định */
+}
+
+/* Kiểu cho các nút */
+.category-add__submit-button,
+.category-add__cancel-button {
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+}
+
+.category-add__submit-button {
+    background-color: #4CAF50; /* Màu nền cho nút thêm */
+    color: white; /* Màu chữ cho nút thêm */
+}
+
+.category-add__submit-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+.category-add__cancel-button {
+    background-color: #f44336; /* Màu nền cho nút hủy */
+    color: white; /* Màu chữ cho nút hủy */
+}
+
+.category-add__cancel-button:hover {
+    background-color: #d32f2f; /* Màu nền khi hover */
+}
+
+/* Kiểu cho thông báo lỗi và thành công */
+.category-add__alert {
+    padding: 10px; /* Padding cho thông báo */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    border-radius: 4px; /* Bo góc cho thông báo */
+}
+
+.category-add__alert--success {
+    background-color: #d4edda; /* Màu nền cho thông báo thành công */
+    color: #155724; /* Màu chữ cho thông báo thành công */
+}
+
+.category-add__alert--error {
+    background-color: #f8d7da; /* Màu nền cho thông báo lỗi */
+    color: #721c24; /* Màu chữ cho thông báo lỗi */
+}
+
+/* Add Product Style */
+/* Kiểu cho container của form thêm sản phẩm */
+.product-add__container {
+    max-width: 600px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+    padding: 20px; /* Padding cho container */
+    border: 2px solid #333; /* Đường viền cho container */
+    border-radius: 8px; /* Bo góc cho container */
+    background-color: #f9f9f9; /* Màu nền cho container */
+    margin-bottom: 30px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho tiêu đề */
+.product-add__title {
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho các trường nhập liệu */
+.product-add__field {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+}
+
+.product-add__label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+.product-add__input,
+.product-add__textarea,
+.product-add__select {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho các trường nhập liệu */
+    border: 2px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 4px; /* Bo góc cho các trường */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+/* Thay đổi màu viền khi focus */
+.product-add__input:focus,
+.product-add__textarea:focus,
+.product-add__select:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+    outline: none; /* Bỏ outline mặc định */
+}
+
+/* Kiểu cho các nút */
+.product-add__submit-button,
+.product-add__cancel-button {
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+}
+
+.product-add__submit-button {
+    background-color: #4CAF50; /* Màu nền cho nút thêm */
+    color: white; /* Màu chữ cho nút thêm */
+}
+
+.product-add__submit-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+.product-add__cancel-button {
+    background-color: #f44336; /* Màu nền cho nút hủy */
+    color: white; /* Màu chữ cho nút hủy */
+}
+
+.product-add__cancel-button:hover {
+    background-color: #d32f2f; /* Màu nền khi hover */
+}
+
+/* Kiểu cho thông báo lỗi và thành công */
+.product-add__alert {
+    padding: 10px; /* Padding cho thông báo */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    border-radius: 4px; /* Bo góc cho thông báo */
+}
+
+.product-add__alert--success {
+    background-color: #d4edda; /* Màu nền cho thông báo thành công */
+    color: #155724; /* Màu chữ cho thông báo thành công */
+}
+
+.product-add__alert--error {
+    background-color: #f8d7da; /* Màu nền cho thông báo lỗi */
+    color: #721c24; /* Màu chữ cho thông báo lỗi */
+}
+
+/* Add User Style */
+/* Kiểu cho container của form thêm người dùng */
+.user-add__container {
+    max-width: 600px; /* Chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa */
+    padding: 20px; /* Padding cho container */
+    border: 2px solid #333; /* Đường viền cho container */
+    border-radius: 8px; /* Bo góc cho container */
+    background-color: #f9f9f9; /* Màu nền cho container */
+    margin-bottom: 30px; /* Khoảng cách phía dưới */
+}
+
+/* Kiểu cho tiêu đề */
+.user-add__title {
+    font-size: 2em; /* Kích thước chữ lớn */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    text-align: center; /* Căn giữa */
+}
+
+/* Kiểu cho các trường nhập liệu */
+.user-add__field {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường */
+}
+
+.user-add__label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    font-weight: bold; /* Chữ đậm cho label */
+}
+
+.user-add__input,
+.user-add__select {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Padding cho các trường nhập liệu */
+    border: 2px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 4px; /* Bo góc cho các trường */
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào chiều rộng */
+}
+
+/* Thay đổi màu viền khi focus */
+.user-add__input:focus,
+.user-add__select:focus {
+    border-color: #007bff; /* Màu viền khi focus */
+    outline: none; /* Bỏ outline mặc định */
+}
+
+/* Kiểu cho các nút */
+.user-add__submit-button,
+.user-add__cancel-button {
+    padding: 10px 15px; /* Padding cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi hover */
+    font-size: 1em; /* Kích thước chữ cho nút */
+    margin: 5px; /* Khoảng cách giữa các nút */
+}
+
+.user-add__submit-button {
+    background-color: #4CAF50; /* Màu nền cho nút thêm */
+    color: white; /* Màu chữ cho nút thêm */
+}
+
+.user-add__submit-button:hover {
+    background-color: #45a049; /* Màu nền khi hover */
+}
+
+.user-add__cancel-button {
+    background-color: #f44336; /* Màu nền cho nút hủy */
+    color: white; /* Màu chữ cho nút hủy */
+}
+
+.user-add__cancel-button:hover {
+    background-color: #d32f2f; /* Màu nền khi hover */
+}
+
+/* Kiểu cho thông báo lỗi và thành công */
+.user-add__alert {
+    padding: 10px; /* Padding cho thông báo */
+    margin-bottom: 20px; /* Khoảng cách phía dưới */
+    border-radius: 4px; /* Bo góc cho thông báo */
+}
+
+.user-add__alert--success {
+    background-color: #d4edda; /* Màu nền cho thông báo thành công */
+    color: #155724; /* Màu chữ cho thông báo thành công */
+}
+
+.user-add__alert--error {
+    background-color: #f8d7da; /* Màu nền cho thông báo lỗi */
+    color: #721c24; /* Màu chữ cho thông báo lỗi */
+}
+
+/* Admin Dashboard Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-title {
+    color: #333;
+    text-align: center; 
+    font-size: larger;
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.admin-button {
+    margin: 10px;
+}
+
+.btn {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 0 auto !important;
+}
+
+.btn-category {
+    background-color: #007bff; /* Màu xanh dương */
+}
+
+.btn-product {
+    background-color: #28a745; /* Màu xanh lá */
+}
+
+.btn-user {
+    background-color: #ffc107; /* Màu vàng */
+}
+
+.btn-order {
+    background-color: #3546dc; /* Màu đỏ */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Categories Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.category-management-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-management-title {
+    color: #333;
+    font-size: 2em; /* Tăng kích thước tiêu đề */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+.search-category {
+    margin-bottom: 20px;
+    display: flex; /* Sử dụng flexbox để căn giữa */
+    justify-content: center; /* Căn giữa nội dung */
+}
+
+.input-group {
+    display: flex; /* Đặt các phần tử trong cùng một hàng */
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 600px; /* Đặt chiều rộng tối đa cho thanh tìm kiếm */
+}
+
+.search-input {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px; /* Điều chỉnh padding cho thanh tìm kiếm */
+    flex: 1; /* Để thanh tìm kiếm chiếm không gian còn lại */
+}
+
+.search-button {
+    border-radius: 4px;
+    padding: 10px 15px; /* Điều chỉnh padding cho nút tìm kiếm */
+}
+
+.category-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.category-table th, .category-table td {
+    text-align: center;
+    padding: 10px;
+}
+
+.action-buttons {
+    display: flex; /* Sử dụng flexbox để căn giữa các nút */
+    justify-content: center; /* Căn giữa các nút */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.delete-button, .edit-button {
+    width: 80px; /* Đặt kích thước nút "Sửa" bằng với nút "Xóa" */
+    background-color: #17a2b8; /* Màu xanh lam cho nút Sửa */
+    color: white;
+    margin: 0 5px; /* Khoảng cách giữa các nút */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Màu đỏ cho nút Xóa */
+    color: white;
+}
+
+.add-category-button {
+    margin-top: 20px;
+}
+
+.btn-success {
+    background-color: #28a745; /* Màu xanh lá */
+    color: white;
+}
+
+.btn {
+    padding: 10px 15px; /* Điều chỉnh padding cho tất cả các nút */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Order Detail */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.order-detail-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-detail-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.order-user-info, .order-info, .order-products, .order-total {
+    margin-bottom: 20px;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f1f1f1;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ea3a60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-back:hover {
+    background-color: #ff0037;
+}
+
+/* Order Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.order-management-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-management-title {
+    text-align : center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.search-button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th, .order-table td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+.order-table th {
+    background-color: #f1f1f1;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-detail:hover {
+    background-color: #218838;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.btn-update {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-update:hover {
+    background-color: #e0a800;
+}
+
+/* Product Style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.product-management-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-management-title {
+    color: #333;
+}
+
+.search-product {
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 300px; /* Chiều rộng của thanh tìm kiếm */
+}
+
+.search-button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: 1px
+    solid #dee2e6;
+    padding: 10px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f1f1f1;
+}
+
+.product-image {
+    border-radius: 4px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+/* Update Category Style */
+

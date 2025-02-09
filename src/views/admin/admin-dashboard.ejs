@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+  
+</head>
+
+<body>
+  <main class="admin-container my-5">
+    <h2 class="admin-title text-center">Bảng điều khiển Admin</h2>
+    <div class="admin-buttons row text-center mt-4">
+      <div class="admin-button col-md-3">
+        <a href="/admin/categories" class="btn btn-category w-100">Quản lý Danh mục</a>
+      </div>
+      <div class="admin-button col-md-3">
+        <a href="/admin/products" class="btn btn-product w-100">Quản lý Sản phẩm</a>
+      </div>
+      <div class="admin-button col-md-3">
+        <a href="/admin/users" class="btn btn-user w-100">Quản lý Người dùng</a>
+      </div>
+      <div class="admin-button col-md-3">
+        <a href="/admin/orders" class="btn btn-order w-100">Quản lý Đơn hàng</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+  <%- include('../layout/footer') %>
+</body>
+</html>

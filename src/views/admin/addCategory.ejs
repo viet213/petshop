@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+</head>
+
+<body>
+  <main class="category-add__container my-5">
+    <h2 class="category-add__title text-center">Thêm Danh mục mới</h2>
+
+    <!-- Hiển thị thông báo lỗi nếu có -->
+    <!-- <% if (success) { %>
+      <div class="category-add__alert category-add__alert--success"><%= success %></div>
+    <% } %>
+    
+    <% if (error) { %>
+      <div class="category-add__alert category-add__alert--error"><%= error %></div>
+    <% } %> -->
+
+    <!-- Form thêm danh mục -->
+    <form action="/admin/categories/add" method="post" class="category-add__form mt-4">
+      <div class="category-add__field mb-3">
+        <label for="categoryName" class="category-add__label">Tên danh mục</label>
+        <input type="text" class="category-add__input" id="categoryName" name="name" placeholder="Nhập tên danh mục" required>
+      </div>
+      <div class="category-add__field mb-3">
+        <label for="categoryDescription" class="category-add__label">Mô tả</label>
+        <textarea class="category-add__textarea" id="categoryDescription" name="description" rows="3" placeholder="Nhập mô tả danh mục" required></textarea>
+      </div>
+      <div class="category-add__actions text-center">
+        <button type="submit" class="category-add__submit-button">Thêm</button>
+        <a href="/admin/categories" class="category-add__cancel-button">Hủy</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+  <%- include('../layout/footer') %>
+</body>
+</html>

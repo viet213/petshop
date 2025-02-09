@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+</head>
+
+<body>
+  <main class="product-add__container my-5">
+    <h2 class="product-add__title text-center">Thêm Sản phẩm mới</h2>
+
+    <!-- Hiển thị thông báo lỗi nếu có -->
+    <!-- <% if (success) { %>
+      <div class="product-add__alert product-add__alert--success"><%= success %></div>
+    <% } %>
+    
+    <% if (error) { %>
+      <div class="product-add__alert product-add__alert--error"><%= error %></div>
+    <% } %> -->
+
+    <!-- Form thêm sản phẩm -->
+    <form action="/admin/products/add" method="post" enctype="multipart/form-data" class="product-add__form mt-4">
+      <div class="product-add__field mb-3">
+        <label for="productName" class="product-add__label">Tên sản phẩm</label>
+        <input type="text" class="product-add__input" id="productName" name="name" required>
+      </div>
+      
+      <div class="product-add__field mb-3">
+        <label for="productPrice" class="product-add__label">Giá</label>
+        <input type="number" class="product-add__input" id="productPrice" name="price" required>
+      </div>
+    
+      <div class="product-add__field mb-3">
+        <label for="productStock" class="product-add__label">Số lượng tồn kho</label>
+        <input type="number" class="product-add__input" id="productStock" name="stock" min="0" value="0" required>
+      </div>
+    
+      <div class="product-add__field mb-3">
+        <label for="productCategory" class="product-add__label">Danh mục</label>
+        <select class="product-add__select" id="productCategory" name="category" required>
+          <% categories.forEach(function(category) { %>
+            <option value="<%= category._id %>"><%= category.name %></option>
+          <% }); %>
+        </select>
+      </div>
+      
+      <div class="product-add__field mb-3">
+        <label for="productDescription" class="product-add__label">Mô tả sản phẩm</label>
+        <textarea class="product-add__textarea" id="productDescription" name="description" rows="5" required></textarea>
+      </div>
+    
+      <div class="product-add__field mb-3">
+        <label for="productImage" class="product-add__label">Hình ảnh</label>
+        <input type="file" class="product-add__input" id="productImage" name="image" accept="image/*" required>
+      </div>
+      
+      <div class="product-add__actions text-center">
+        <button type="submit" class="product-add__submit-button">Thêm</button>
+        <a href="/admin/products" class="product-add__cancel-button">Hủy</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

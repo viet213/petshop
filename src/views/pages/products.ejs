@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Thêm Bootstrap CSS -->
+    <%- include('../layout/header') %>
+        <%- include('../layout/navbar') %>
+            <title>Products - Online Pet Shop</title>
+</head>
+
+<body>
+    <!-- <% if (messages.error) { %>
+        <script type="text/javascript">
+            alert("<%= messages.error %>");
+        </script>
+    <% } %>
+    
+    <% if (messages.success) { %>
+        <script type="text/javascript">
+            alert("<%= messages.success %>");
+        </script>
+    <% } %> -->
+    <main class="products-page">
+        <div class="products-header">
+            <h1>Sản phẩm của chúng tớ</h1>
+            <% if (query) { %>
+                <p class="search-result">Search results for "<%= query %>":</p>
+                <% } %>
+        </div>
+
+        <% if (products.length> 0) { %>
+            <div class="container">
+                <div class="product-grid">
+                    <% products.forEach(product=> { %>
+                        <div class="product-card">
+                            <a href="/products/<%= product._id %>">
+                                <img src="<%= product.imageUrl %>" alt="<%= product.name %>" class="product-image">
+                            </a>
+                            <h3 class="product-title">
+                                <a href="/products/<%= product._id %>">
+                                    <%= product.name %>
+                                </a>
+                            </h3>
+                            <p class="product-price">Giá: <%= product.price %> VND</p>
+                        </div>
+                        <% }); %>
+                </div>
+            </div>
+            <% } else { %>
+                <p class="no-products">No products found.</p>
+                <% } %>
+    </main>
+
+    <!-- Thêm Bootstrap JS và jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+    <%- include('../layout/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!-- header.ejs -->
+<header>
+    <div class="header-container">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/">
+                <img src="/images/logo.png" alt="PetShop Logo">
+            </a>
+        </div>
+
+        <!-- Display error message -->
+        <% if (flash.error) { %>
+            <script type="text/javascript">
+                alert("<%= flash.error %>");
+            </script>
+        <% } %>
+
+        <!-- Display success message -->
+        <% if (flash.success) { %>
+            <script type="text/javascript">
+                alert("<%= flash.success %>");
+            </script>
+        <% } %>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <form action="/products" method="GET" onsubmit="return validateSearch()">
+                <input type="text" name="query" id="searchQuery" placeholder="Tìm kiếm sản phẩm" value="<%= query || '' %>" required>
+                <button type="submit" class="btn-search btn">
+                    <svg class="svg search" height="30px" width="30px" viewBox="0 0 24 24"><path d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.39zM11 18a7 7 0 1 1 7-7 7 7 0 0 1-7 7z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        
+        <!-- User Options -->
+        <div class="user-options">
+            <% if (user) { %>
+                <!-- Nếu người dùng đã đăng nhập -->
+                <a href="/user/profile">Chào mừng, <%= user.name %></a>
+                <a href="/auth/logout" class="logout">Đăng xuất</a>
+                <a href="/user/orders">Danh sách đơn hàng</a>
+                <!-- cart -->
+                <div class="cart-icon">
+                    <a href="/user/cart">
+                        <img src="/images/cart-icon.svg" alt="Cart">
+                        <% if (cartItemCount > 0) { %>
+                            <span class="cart-count"><%= cartItemCount %></span>
+                        <% } %>
+                    </a>
+                </div>
+                <% if (user.role === 'admin') { %>
+                    <a href="/admin/admin-dashboard">Quản Lý</a>  
+                <% } %>
+            <% } else { %>
+                <!-- Nếu chưa đăng nhập -->
+                <a href="/auth/login">Đăng nhập</a>
+                <a href="/auth/signup">Đăng ký</a>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- Liên kết tệp JavaScript -->
+    <script src="/js/main.js"></script>
+</header>

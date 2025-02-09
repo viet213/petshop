@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+    <%- include('../layout/header') %>
+    <%- include('../layout/navbar') %>
+</head>
+<body>
+    <h1 class="order-details__title">Chi Tiết Đơn Hàng</h1>
+
+    <table class="order-details__table" border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="order-details__header">Sản phẩm</th>
+                <th class="order-details__header">Số lượng</th>
+                <th class="order-details__header">Giá</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orderDetails.forEach(detail => { %>
+                <tr class="order-details__row">
+                    <td class="order-details__product-name"><%= detail.productSnapshot.name %> <br></td>
+                    <td class="order-details__quantity"><%= detail.quantity %></td>
+                    <td class="order-details__price"><%= detail.price %> VND</td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <div class="order-details__summary">
+        <p class="order-details__total"><strong>Tổng tiền: </strong><%= order.totalPrice %> VND</p>
+        <p class="order-details__shipping-address"><strong>Địa chỉ giao hàng: </strong><%= order.shippingAddress %></p>
+        <p class="order-details__recipient-name"><strong>Người nhận: </strong><%= order.recipientName %></p>
+        <p class="order-details__phone-number"><strong>Số điện thoại: </strong><%= order.phoneNumber %></p>
+        <p class="order-details__status"><strong>Trạng thái: </strong><%= order.status %></p>
+    </div>
+
+    <% if (order.status === 'Pending') { %>
+        <form action="/user/order/<%= order._id %>/cancel" method="POST" class="order-details__cancel-form">
+            <button type="submit" class="order-details__cancel-button">Hủy Đơn Hàng</button>
+        </form>
+    <% } %>
+
+    <p class="order-details__back-link">
+        <button onclick="window.location.href='/user/orders'" class="order-details__back-button">Trở về trang đơn hàng</button>
+    </p>
+
+    <!-- Thêm Bootstrap JS và jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

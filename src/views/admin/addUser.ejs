@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Thêm Bootstrap CSS -->
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+</head>
+
+<body>
+  <main class="user-add__container my-5">
+    <h2 class="user-add__title text-center">Thêm Người Dùng Mới</h2>
+
+    <!-- Hiển thị thông báo lỗi nếu có -->
+    <!-- <% if (success) { %>
+      <div class="user-add__alert user-add__alert--success"><%= success %></div>
+    <% } %>
+    
+    <% if (error) { %>
+      <div class="user-add__alert user-add__alert--error"><%= error %></div>
+    <% } %> -->
+
+    <form action="/admin/users/add" method="post" class="user-add__form mt-4" onsubmit="return validateForm()">
+      <div class="user-add__field mb-3">
+        <label for="name" class="user-add__label">Tên người dùng</label>
+        <input
+          type="text"
+          class="user-add__input"
+          id="name"
+          name="name"
+          placeholder="Nhập tên người dùng"
+          required
+        >
+      </div>
+
+      <div class="user-add__field mb-3">
+        <label for="email" class="user-add__label">Email</label>
+        <input
+          type="email"
+          class="user-add__input"
+          id="email"
+          name="email"
+          placeholder="Nhập email"
+          required
+        >
+      </div>
+
+      <div class="user-add__field mb-3">
+        <label for="password" class="user-add__label">Mật khẩu</label>
+        <input
+          type="password"
+          class="user-add__input"
+          id="password"
+          name="password"
+          placeholder="Nhập mật khẩu"
+          required
+        >
+      </div>
+
+      <div class="user-add__field mb-3">
+        <label for="confirmPassword" class="user-add__label">Xác nhận mật khẩu</label>
+        <input
+          type="password"
+          class="user-add__input"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Xác nhận mật khẩu"
+          required
+        >
+      </div>
+
+      <div class="user-add__field mb-3">
+        <label for="role" class="user-add__label">Vai trò</label>
+        <select class="user-add__select" id="role" name="role" required>
+          <option value="user" selected>Người dùng</option>
+          <option value="admin">Quản trị viên</option>
+        </select>
+      </div>
+
+      <div class="user-add__actions text-center">
+        <button type="submit" class="user-add__submit-button">Thêm</button>
+        <a href="/admin/users" class="user-add__cancel-button">Quay lại</a>
+      </div>
+    </form>
+  </main>
+
+  <!-- Thêm Bootstrap JS và jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap /4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+</body>
+<%- include('../layout/footer') %>
+</html>

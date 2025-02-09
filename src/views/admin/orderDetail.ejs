@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <%- include('../layout/header') %>
+  <%- include('../layout/navbar') %>
+</head>
+
+<body>
+  <main class="order-detail-container">
+    <h1 class="order-detail-title">Chi Tiết Đơn Hàng</h1>
+    
+    <!-- Thông tin người đặt hàng -->
+    <section class="order-user-info">
+      <h2 class="section-title">Thông Tin Người Đặt Hàng</h2>       
+      <% if (order.user) { %>
+        <p><strong>Tên:</strong> <%= order.user.name %></p>
+        <p><strong>Email:</strong> <%= order.user.email %></p>
+        <p><strong>Số Điện Thoại:</strong> <%= order.user.phoneNumber %></p>
+      <% } else { %>
+        <p>Thông tin người đặt hàng không có sẵn.</p>
+      <% } %>
+    </section>
+
+    <!-- Thông tin đơn hàng -->
+    <section class="order-info">
+      <h2 class="section-title">Thông Tin Đơn Hàng</h2>
+      <p><strong>ID Đơn Hàng:</strong> <%= order._id %></p>
+      <p><strong>Ngày Đặt:</strong> <%= order.createdAt.toLocaleDateString() %></p>
+      <p><strong>Trạng Thái:</strong> <%= order.status %></p>
+      <p><strong>Phương Thức Thanh Toán:</strong> <%= order.paymentMethod %></p>
+      <p><strong>Địa Chỉ Giao Hàng:</strong> <%= order.shippingAddress %></p>
+    </section>
+
+    <!-- Danh sách sản phẩm -->
+    <section class="order-products">
+      <h2 class="section-title">Sản Phẩm Trong Đơn Hàng</h2>
+      <table class="product-table">
+          <thead>
+              <tr>
+                  <th>Tên Sản Phẩm</th>
+                  <th>Danh Mục</th>
+                  <th>Số Lượng</th>
+                  <th>Đơn Giá</th>
+                  <th>Tổng</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% if (orderDetails && orderDetails.length > 0) { %>
+                  <% orderDetails.forEach(detail => { %>
+                      <tr>
+                          <td><%= detail.productSnapshot.name %></td>
+                          <td><%= detail.productSnapshot.category || 'Chưa xác định' %></td>
+                          <td><%= detail.quantity %></td>
+                          <td><%= detail.price.toLocaleString('vi-VN') %> VND</td>
+                          <td><%= (detail.quantity * detail.price).toLocaleString('vi-VN') %> VND</td>
+                      </tr>
+                  <% }) %>
+              <% } else { %>
+                  <tr>
+                      <td colspan="5">Không có sản phẩm nào trong đơn hàng.</td>
+                  </tr>
+              <% } %>
+          </tbody>
+      </table>
+    </section>
+
+    <!-- Tổng tiền -->
+    <section class="order-total">
+      <h2 class="section-title">Tổng Tiền</h2>
+      <p><strong><%= order.totalPrice.toLocaleString('vi-VN') %> VND</strong></p>
+    </section>
+
+    <div class="back-link">
+      <a href="/admin/orders" class="btn-back">Quay Lại Danh Sách Đơn Hàng</a>
+    </div>
+  </main>
+
+  <script src="/js/main.js"></script> <!-- Thêm tệp main.js -->
+  <%- include('../layout/footer') %>
+</body>
+</html>
